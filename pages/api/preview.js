@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 
-export default async (req, res) => {
+export default async function preview(req, res) {
   if (!req.query.slug) {
     return res.status(404).end();
   }
@@ -21,4 +21,4 @@ export default async (req, res) => {
   });
   res.writeHead(307, {Location: `/blog/${content.id}`});
   res.end('Preview mode enabled');
-};
+}
