@@ -21,7 +21,7 @@ export const getStaticProps = async () => {
     headers: {'X-API-KEY': process.env.API_KEY},
   };
 
-  const res = await fetch('https://techpit-1.microcms.io/api/v1/blog', key);
+  const res = await fetch('https://your.microcms.io/api/v1/blog', key);
 
   const data = await res.json();
 
