@@ -26,7 +26,7 @@ export const getStaticPaths = async () => {
     headers: {'X-API-KEY': process.env.API_KEY},
   };
 
-  const res = await fetch('https://techpit-1.microcms.io/api/v1/blog', key);
+  const res = await fetch('https://your.microcms.io/api/v1/blog', key);
   const repos = await res.json();
 
   const paths = repos.contents.map(repo => `/blog/${repo.id}`);
@@ -42,7 +42,7 @@ export const getStaticProps = async context => {
   };
 
   const res = await fetch(
-    `https://techpit-1.microcms.io/api/v1/blog/${id}?${
+    `https://your.microcms.io/api/v1/blog/${id}?${
       draftKey !== undefined ? `draftKey=${draftKey}` : ''
     }`,
     key,

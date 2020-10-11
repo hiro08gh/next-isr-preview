@@ -5,7 +5,7 @@ export default async (req, res) => {
     return res.status(404).end();
   }
   const content = await fetch(
-    `https://techpit-1.microcms.io/api/v1/blog/${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`,
+    `https://your.microcms.io/api/v1/blog/${req.query.slug}?fields=id&draftKey=${req.query.draftKey}`,
     {headers: {'X-API-KEY': process.env.API_KEY || ''}},
   )
     .then(res => res.json())
